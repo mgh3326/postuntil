@@ -1,0 +1,15 @@
+# Values correspond directly to `postuntil run` flags. Keep credentials in EnvironmentFile.
+post = "https://example.internal/api/jobs"
+body = '{"kind":"example"}'
+id_path = ".task_id"
+poll = "https://example.internal/api/jobs/{{.id}}"
+until = ".state=done"
+fail_when = ".state=error"
+interval = "5s"
+timeout = "30m"
+max_polls = 360
+idempotency_key = "auto"
+idempotency_header = "Idempotency-Key"
+
+[header_env]
+Authorization = "JOB_TOKEN"
