@@ -1,0 +1,7 @@
+[Unit]
+Description=Run a postuntil job
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/postuntil/example.env
+ExecStart=/usr/local/bin/postuntil run -f /etc/postuntil/job.toml
